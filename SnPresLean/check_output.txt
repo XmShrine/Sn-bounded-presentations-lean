@@ -1,0 +1,47 @@
+main_theorem : ∃ r₀ c₀,
+  ∀ (n : ℕ) (hn : 2 ≤ n),
+    ∃ R, IsPresentation (xyv n ⋯) ↑R ∧ (∀ E ∈ R, E.WF) ∧ R.card ≤ r₀ ∧ presLength R ≤ c₀ * Nat.log 2 n
+main_theorem_62 : ∃ c₀,
+  ∀ (n : ℕ) (hn : 245 ≤ n),
+    ∃ R, IsPresentation (xyv n ⋯) ↑R ∧ (∀ E ∈ R, E.WF) ∧ R.card ≤ 62 ∧ presLength R ≤ c₀ * Nat.log 2 n
+main_theorem_mathlib : ∃ r₀ c₀,
+  ∀ (n : ℕ) (hn : 2 ≤ n),
+    ∃ R, IsPresentation (stdGen n ⋯) ↑R ∧ (∀ E ∈ R, E.WF) ∧ R.card ≤ r₀ ∧ presLength R ≤ c₀ * Nat.log 2 n
+main_theorem_mathlib_62 : ∃ c₀,
+  ∀ (n : ℕ) (hn : 245 ≤ n),
+    ∃ R, IsPresentation (stdGen n ⋯) ↑R ∧ (∀ E ∈ R, E.WF) ∧ R.card ≤ 62 ∧ presLength R ≤ c₀ * Nat.log 2 n
+@thm_6_3 : ∀ {p : ℕ} [inst : Fact (Nat.Prime p)] {lam mu : ℕ},
+  5 ≤ p → PrimRoot p lam mu → IsPresentation sixVal (sixRels p lam mu)
+@thm_7_3 : ∀ {p : ℕ} [inst : Fact (Nat.Prime p)] {n lam mu : ℕ},
+  5 ≤ p →
+    PrimRoot p lam mu →
+      n + 3 ≤ 2 * NN p → NN p ≤ n - 1 → ∀ (hnN : NN p ≤ n), IsPresentation (gluVal n hnN) (gluRels n p lam mu)
+@prop_5_3 : ∀ {p : ℕ} [inst : Fact (Nat.Prime p)] {lam mu : ℕ},
+  5 ≤ p → PrimRoot p lam mu → IsPresentation aslVal (aslRels p lam mu)
+@cor_5_4 : ∀ {p : ℕ} [inst : Fact (Nat.Prime p)] {lam mu : ℕ},
+  5 ≤ p → PrimRoot p lam mu → IsPresentation lutVal (lutRels p lam mu)
+'SnPres.main_theorem' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound,
+ SnPres.Classical.carmichael_bound,
+ SnPres.Classical.moore_bound,
+ SnPres.Classical.nagura,
+ SnPres.Classical.sunday_bound]
+'SnPres.main_theorem_mathlib_62' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound,
+ SnPres.Classical.carmichael_bound,
+ SnPres.Classical.moore_bound,
+ SnPres.Classical.nagura,
+ SnPres.Classical.sunday_bound]
+'SnPres.thm_6_3' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound,
+ SnPres.Classical.carmichael_bound,
+ SnPres.Classical.sunday_bound]
+'SnPres.thm_7_3' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound,
+ SnPres.Classical.carmichael_bound,
+ SnPres.Classical.moore_bound,
+ SnPres.Classical.sunday_bound]
